@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'issue/index'
-
-  get 'issue/hook'
+  get 'issues/index'
+  post 'issues/hook'
+  root 'issues#index'
+  post 'issues/report'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

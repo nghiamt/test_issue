@@ -31,6 +31,7 @@ gem "octokit"
 gem 'dotenv-rails'
 gem 'pry-byebug' 
 gem 'whenever', :require => false
+gem 'business_time'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
