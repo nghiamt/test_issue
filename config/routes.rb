@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post 'issues/hook'
   root 'issues#index'
   post 'issues/report'
+  post 'issues/update_issue'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
