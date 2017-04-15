@@ -7,7 +7,7 @@ class IssuesController < ApplicationController
   def report
     Issue.report
     respond_to do |format|
-      format.js
+      format.html{render "index"}
     end
   end
 
