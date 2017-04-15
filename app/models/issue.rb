@@ -1,6 +1,6 @@
 class Issue < ActiveRecord::Base
-  serialize :labels, Array
-  serialize :assignees, Array
+  serialize :labels, Array if Rails.env.development?
+  serialize :assignees, Array if Rails.env.development?
   require 'push_chatwork_notification'
 
   after_save :push_notification

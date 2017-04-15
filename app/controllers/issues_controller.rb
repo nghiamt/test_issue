@@ -7,7 +7,7 @@ class IssuesController < ApplicationController
   def report
     Issue.report
     respond_to do |format|
-      format.html{render "index"}
+      format.html{redirect_to root_url}
     end
   end
 
@@ -35,7 +35,6 @@ class IssuesController < ApplicationController
         data[:level_start_time] = Time.now.to_date
       end
     end
-
     if issue.blank?      
       issue = Issue.create data
     else
