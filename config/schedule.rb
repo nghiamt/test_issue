@@ -18,14 +18,14 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every :day, at: "0:30 am" do
+every :day, at: "9:30 am" do
   runner "Issue.update_level_issues"
 end
 
-every :day, at: "0:32 am" do
+every :day, at: "9:45 am" do
   runner "Issue.report"
 end
 
-every :day, at: "0:34 am" do
+every :day, at: "6:00 pm" do
   runner "Issue.report"
 end
