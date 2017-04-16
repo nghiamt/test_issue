@@ -19,6 +19,7 @@ class IssuesController < ApplicationController
   end
 
   def hook
+    binding.pry
     issue_info = params["issue"]
     changed_label = params["label"]
 
@@ -28,7 +29,7 @@ class IssuesController < ApplicationController
 
     data = {
       title: issue_info["title"],
-      url: issue_info["url"],
+      url: issue_info["html_url"],
       number: issue_info["number"].to_i,
       status: issue_info["state"],
       labels: labels,
