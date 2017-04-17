@@ -6,7 +6,7 @@ class Issue < ActiveRecord::Base
   after_save :push_notification
 
   def push_notification
-    if level_changed?
+    if level_changed? && labels.join.include?("level-")
       message = "[To:948996] Mai Trung Nghiaさん\n"
       message += "追加または更新されたレベルイシューがあります。\n"
       message += "[info][title]#{self.title}[/title]レベル： #{self.level}\nリンク： #{self.url}[/info]"
@@ -15,7 +15,7 @@ class Issue < ActiveRecord::Base
   end
 
   def self.report
-    message = "[To:948996] Mai Trung Nghiaさん\n"
+    message = "[To:597252] 斎藤 幸士さん\n[To:948996] Mai Trung Nghiaさん\n"
     message += "お疲れ様です。\nレベルイシューの状況を共有させていただきます。\n"
     
     [1,2,3].each do |i|

@@ -19,7 +19,6 @@ class IssuesController < ApplicationController
   end
 
   def hook
-    binding.pry
     issue_info = params["issue"]
     changed_label = params["label"]
 
