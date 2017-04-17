@@ -18,6 +18,13 @@ class IssuesController < ApplicationController
     end
   end
 
+  def weekly_report
+    Issue.weekly_report
+    respond_to do |format|
+      format.html{redirect_to root_url}
+    end
+  end
+
   def hook
     issue_info = params["issue"]
     changed_label = params["label"]
