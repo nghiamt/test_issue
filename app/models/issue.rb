@@ -47,6 +47,7 @@ class Issue < ActiveRecord::Base
   end
 
   def self.weekly_report
+    Issue.where(level: [2,3], status: "closed", closed_at: nil).update_all closed_at: Time.now.yesterday.to_date
     message = "[To:597252] 斎藤 幸士さん\n[To:948996] Mai Trung Nghiaさん\n"
     message += "お疲れ様です。\nレベルイシューの状況を共有させていただきます。\n"
 
