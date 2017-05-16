@@ -1,5 +1,5 @@
 class PushChatworkNotification
-  ENDPOINT = "https://api.chatwork.com/v1/rooms/#{ENV['CHATWORK_ROOM_ID']}/messages"
+  ENDPOINT = "https://api.chatwork.com/v2/rooms/#{ENV['CHATWORK_ROOM_ID']}/messages"
   GITHUB = Octokit::Client.new(:access_token => ENV["GITHUB_ACCESS_TOKEN"])
 
   def self.push_noti message
